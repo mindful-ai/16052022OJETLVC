@@ -1,0 +1,50 @@
+<div>
+    <h1>Table Experiments</h1>
+    <h3>Master Table</h3>
+    <oj-table id='table' aria-label='Departments Table'
+        data='[[pagingDataProvider]]' 
+        columns-default.sortable='disabled'
+        selection-mode='{"row": "multiple", "column": "multiple"}'
+        dnd.drag.rows.data-types='["application/ojtablerows+json"]'
+        columns='[{"headerText": "Department Id", 
+                   "field": "DepartmentId",
+                   "headerClassName": "oj-sm-only-hide",
+                   "className": "oj-sm-only-hide"},
+                  {"headerText": "Department Name", 
+                    "sortable":"enabled",
+                   "field": "DepartmentName"},
+                  {"headerText": "Location Id", 
+                   "field": "LocationId",
+                   "headerClassName": "oj-sm-only-hide",
+                   "className": "oj-sm-only-hide"},
+                  {"headerText": "Manager Id", 
+                   "field": "ManagerId"}]'
+        style='width: 100%; height:100%;'>
+
+        <oj-paging-control id="paging" data='[[pagingDataProvider]]' page-size='10' slot='bottom'>
+        </oj-paging-control>
+    </oj-table>
+
+    <h3>Slave Table</h3>
+    <oj-table id='table' aria-label='Departments Table'
+        data='[[dataProvider2]]' 
+        columns-default.sortable='disabled' 
+        selection-mode='{"row": "multiple", "column": "multiple"}'
+        dnd.drop.rows.data-types='["application/ojtablerows+json"]'
+        dnd.drop.rows.drop='[[handleDropRows]]'
+        columns='[{"headerText": "Department Id", 
+                   "field": "DepartmentId",
+                   "headerClassName": "oj-sm-only-hide",
+                   "className": "oj-sm-only-hide"},
+                  {"headerText": "Department Name", 
+                    "sortable":"enabled",
+                   "field": "DepartmentName"},
+                  {"headerText": "Location Id", 
+                   "field": "LocationId",
+                   "headerClassName": "oj-sm-only-hide",
+                   "className": "oj-sm-only-hide"},
+                  {"headerText": "Manager Id", 
+                   "field": "ManagerId"}]'
+        style='width: 100%; height:100%;'>
+    </oj-table>
+</div>
